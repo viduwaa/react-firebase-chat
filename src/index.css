@@ -3,49 +3,60 @@
 @tailwind utilities;
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-body{
-  background-image: url(/bg.jpg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  color:white;
+body {
+    background-image: url(/bg.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
 }
-
-
-
 
 .scrollbar {
-  --sb-track-color: #293b44;
-  --sb-thumb-color: #6baf8d;
-  --sb-size: 4px;
+    --sb-track-color: #e1e6e9;
+    --sb-thumb-color: #070808;
+    --sb-size: 4px;
 }
 
 .scrollbar::-webkit-scrollbar {
-  width: var(--sb-size)
+    width: var(--sb-size);
 }
 
 .scrollbar::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 5px;
+    background: var(--sb-track-color);
+    border-radius: 5px;
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 5px;
-  
+    background: var(--sb-thumb-color);
+    border-radius: 5px;
 }
 
 @supports not selector(::-webkit-scrollbar) {
-  .scrollbar {
-    scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
+    .scrollbar {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+}
+
+.text{
+  img {
+    @apply  w-[400px] h-auto rounded-md object-cover mb-2;
   }
 }
+
+.owner {
+    @apply justify-end ;
+
+    p {
+        @apply bg-blue-400 ;
+    }
+
+}
+
