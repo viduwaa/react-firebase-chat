@@ -26,7 +26,6 @@ const App = () => {
         };
     }, [fetchUserInfo]);
 
-	console.log(currentUser)
 
 	if (isLoading) return <div className="p-3 text-lg rounded-lg bg-blue-950 text-white">Loading...</div>
 

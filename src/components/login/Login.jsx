@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import "./login.css";
 import { toast } from "react-toastify";
 import {
@@ -76,7 +75,7 @@ const Login = () => {
             });
 
             toast.success(
-                "User created successfully! Please login to continue."
+                "User created successfully! Please log in to continue."
             );
         } catch (error) {
             console.log(error);
@@ -85,6 +84,7 @@ const Login = () => {
             setLoading(false);
         }
     };
+
     return (
         <div className="flex w-full gap-5">
             <div className="mt-[10%] flex flex-1 p-5 flex-col items-center ">
@@ -93,11 +93,17 @@ const Login = () => {
                     onSubmit={handleLogin}
                     className="login flex flex-col w-4/6 gap-3 p-2"
                 >
-                    <input type="email" placeholder="Email" name="email" />
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        required
+                    />
                     <input
                         type="password"
                         placeholder="Password"
                         name="password"
+                        required
                     />
                     <button
                         disabled={loading}
@@ -110,7 +116,7 @@ const Login = () => {
             <div className="flex flex-1 p-5 flex-col items-center border-l-2 border-l-white">
                 <h2 className="mt-[10%] text-xl">Create an Account</h2>
                 <form
-                    className="login flex flex-col w-4/6 gap-3 p-2 "
+                    className="login flex flex-col w-4/6 gap-3 p-2"
                     onSubmit={handleRegister}
                 >
                     <input
@@ -120,7 +126,7 @@ const Login = () => {
                         onChange={handleAvatar}
                     />
                     <label
-                        className="flex  flex-col items-center cursor-pointer"
+                        className="flex flex-col items-center cursor-pointer"
                         htmlFor="file"
                     >
                         <img
@@ -130,16 +136,27 @@ const Login = () => {
                         />
                         Upload an Image
                     </label>
-                    <input type="text" placeholder="Username" name="username" />
-                    <input type="email" placeholder="Email" name="email" />
+                    <input
+                        type="text"
+                        placeholder="Username"
+                        name="username"
+                        required
+                    />
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        required
+                    />
                     <input
                         type="password"
                         placeholder="Password"
                         name="password"
+                        required
                     />
                     <button
                         disabled={loading}
-                        className="p-2 bg-blue-900 w-2/5 m-auto rounded-lg hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-blue-900 "
+                        className="p-2 bg-blue-900 w-2/5 m-auto rounded-lg hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-blue-900"
                     >
                         {loading ? "Please Wait" : "Sign Up"}
                     </button>
